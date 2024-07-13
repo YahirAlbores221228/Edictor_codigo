@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles.css">
+    <title>Edictor</title>
+</head>
+
+<body>
+    <div class="container-edict">
+        <header class="headers">
+            <div class="logo">
+                <h3 class="logo-title">VSUP</h3>
+            </div>
+            <div>
+                <h3 class="title">Edictor de codigo </h3>
+            </div>
+            <div>
+                <button class="execute-btn">Ejecutar</button>
+                <button class="execute-btn">Mimizar</button>
+                <button class="execute-btn">Close</button>
+            </div>
+        </header>
+
+        <section class="editor">
+            <form action="">
+                <textarea name="" id="" class="code-editor">
+class Cromosoma:
+    def __init__(self, num_miembros, tareas, dias, franjas_horarias):
+        self.asignacion = [[[None for _ in range(franjas_horarias)]
+                            for _ in range(dias)]
+                            for _ in range(num_miembros)]
+        self.fitness = 0
+
+    def generar_aleatorio(self, miembros, tareas):
+        for tarea in tareas:
+            miembro = random.randint(0, len(miembros) - 1)
+            dia = random.randint(0, len(self.asignacion[0]) - 1)
+            franja = random.randint(0, len(self.asignacion[0][0]) - 1)
+            self.asignacion[miembro][dia][franja] = tarea
+
+def inicializar_poblacion(tamano_poblacion, miembros, tareas, dias, franjas_horarias):
+    poblacion = []
+    for _ in range(tamano_poblacion):
+        cromosoma = Cromosoma(len(miembros), tareas, dias, franjas_horarias)
+        cromosoma.generar_aleatorio(miembros, tareas)
+        poblacion.append(cromosoma)
+    return poblacion
+</textarea>
+            </form>
+        </section>
+
+        <section class="result">
+            <div class="result-title">
+                <h4>Resultados</h4>
+            </div>
+            <div class="output">
+                Domingo:
+                Hora 00:00 - Aspirar - Responsable: María<br>
+                Hora 01:00 - Aspirar - Responsable: Juan<br>
+                Hora 02:00 - Lavar platos - Responsable: María<br>
+                Hora 03:00 - Lavar ropa - Responsable: Ana<br>
+                Hora 04:00 - Cocinar - Responsable: Juan<br>
+                Hora 05:00 - Lavar platos - Responsable: Juan<br>
+                Hora 06:00 - Lavar ropa - Responsable: Ana<br>
+                Hora 07:00 - Aspirar - Responsable: María<br>
+                Hora 08:00 - Lavar platos - Responsable: Juan<br>
+                Hora 09:00 - Lavar ropa - Responsable: Ana<br>
+            </div>
+    </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    overflow-y: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #23242C;
+    padding: 10px 20px;
+}
+
+.logo {
+    color: white;
+}
+
+.logo-title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.title {
+    color: #ffcc00;
+}
+
+.execute-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.execute-btn:nth-of-type(3) {
+    background-color: #a72828;
+}
+
+.editor,
+.result {
+    flex: 1;
+    background-color: #1e1e1e;
+    overflow-y: auto;
+}
+
+.editor textarea {
+    width: 100%;
+    height: 350px;
+    background-color: #2B2C37;
+    color: #AB880B;
+    border: none;
+    padding: 20px;
+    font-family: monospace;
+    font-size: 14px;
+    resize: none;
+    overflow-y: scroll;
+}
+
+.editor textarea:focus {
+    outline: none;
+}
+
+form {
+    display: flex;
+    width: 100%;
+    height: auto;
+
+}
+
+h4 {
+    font-size: 15px;
+}
+
+.result-title {
+    display: flex;
+    align-items: center;
+    background-color: #757575;
+    height: 10px;
+    color: #ffcc00;
+    padding: 10px;
+}
+
+.output {
+    background-color: #272830;
+    height: 300px;
+    color: #d4d4d4;
+    white-space: pre-wrap;
+    overflow-y: auto;
+}

@@ -1,0 +1,1447 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    ABIERTO
+    CERRADO
+    COMA
+    COMILLAS
+    GATO
+    HACER
+    LLAVE_ABIERTA
+    LLAVE_CERRADA
+    MENOR
+    MIENTRAS
+    PARA
+    PUNTO
+
+Grammar
+
+Rule 0     S' -> program
+Rule 1     program -> statement_list
+Rule 2     statement_list -> statement
+Rule 3     statement_list -> statement_list statement
+Rule 4     statement -> <empty>
+Rule 5     statement -> variable_declaration
+Rule 6     statement -> assignment_statement
+Rule 7     statement -> condition_statement
+Rule 8     statement -> increment_statement
+Rule 9     statement -> condition
+Rule 10    statement -> print_statement
+Rule 11    statement -> suma_statement
+Rule 12    statement -> resta_statement
+Rule 13    statement -> product_statement
+Rule 14    statement -> division_statement
+Rule 15    variable_declaration -> DECLARACION INT IDENTIFICADOR NUMERO PUNTO_Y_COMA
+Rule 16    variable_declaration -> DECLARACION INT IDENTIFICADOR PUNTO_Y_COMA
+Rule 17    variable_declaration -> DECLARACION FLOAT IDENTIFICADOR NUMERO PUNTO_Y_COMA
+Rule 18    variable_declaration -> DECLARACION STRING IDENTIFICADOR CADENA PUNTO_Y_COMA
+Rule 19    suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA IDENTIFICADOR MAS IDENTIFICADOR PUNTO_Y_COMA
+Rule 20    suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA NUMERO MAS IDENTIFICADOR PUNTO_Y_COMA
+Rule 21    suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA IDENTIFICADOR MAS NUMERO PUNTO_Y_COMA
+Rule 22    suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA NUMERO MAS NUMERO PUNTO_Y_COMA
+Rule 23    resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION IDENTIFICADOR RESTA IDENTIFICADOR PUNTO_Y_COMA
+Rule 24    resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION NUMERO RESTA IDENTIFICADOR PUNTO_Y_COMA
+Rule 25    resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION IDENTIFICADOR RESTA NUMERO PUNTO_Y_COMA
+Rule 26    resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION NUMERO RESTA NUMERO PUNTO_Y_COMA
+Rule 27    product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO IDENTIFICADOR POR IDENTIFICADOR PUNTO_Y_COMA
+Rule 28    product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO NUMERO POR IDENTIFICADOR PUNTO_Y_COMA
+Rule 29    product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO IDENTIFICADOR POR NUMERO PUNTO_Y_COMA
+Rule 30    product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO NUMERO POR NUMERO PUNTO_Y_COMA
+Rule 31    division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION IDENTIFICADOR DIVISION IDENTIFICADOR PUNTO_Y_COMA
+Rule 32    division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION NUMERO DIVISION IDENTIFICADOR PUNTO_Y_COMA
+Rule 33    division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION IDENTIFICADOR DIVISION NUMERO PUNTO_Y_COMA
+Rule 34    division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION NUMERO DIVISION NUMERO PUNTO_Y_COMA
+Rule 35    print_statement -> PRESENTAR IDENTIFICADOR EN CONSOLA PUNTO_Y_COMA
+Rule 36    print_statement -> PRESENTAR EN CONSOLA CADENA PUNTO_Y_COMA
+Rule 37    condition -> INT IDENTIFICADOR IGUAL IGUAL NUMERO
+Rule 38    condition -> IDENTIFICADOR IGUAL IGUAL NUMERO
+Rule 39    assignment_statement -> IDENTIFICADOR IGUAL NUMERO
+Rule 40    assignment_statement -> IDENTIFICADOR IGUAL IDENTIFICADOR MAS IDENTIFICADOR
+Rule 41    condition_statement -> IDENTIFICADOR MENOR_IGUAL NUMERO
+Rule 42    condition_statement -> IDENTIFICADOR IGUAL IGUAL NUMERO
+Rule 43    condition_statement -> IDENTIFICADOR MAYOR NUMERO
+Rule 44    condition_statement -> IDENTIFICADOR MAYOR_IGUAL NUMERO
+Rule 45    increment_statement -> IDENTIFICADOR MAS MAS
+Rule 46    increment_statement -> IDENTIFICADOR MAS_IGUAL NUMERO
+
+Terminals, with rules where they appear
+
+ABIERTO              : 
+ALMACENAR            : 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34
+CADENA               : 18 36
+CERRADO              : 
+COMA                 : 
+COMILLAS             : 
+CONSOLA              : 35 36
+DECLARACION          : 15 16 17 18
+DIVISION             : 31 31 32 32 33 33 34 34
+EN                   : 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36
+FLOAT                : 17
+GATO                 : 
+HACER                : 
+IDENTIFICADOR        : 15 16 17 18 19 19 19 20 20 21 21 22 23 23 23 24 24 25 25 26 27 27 27 28 28 29 29 30 31 31 31 32 32 33 33 34 35 37 38 39 40 40 40 41 42 43 44 45 46
+IGUAL                : 37 37 38 38 39 40 42 42
+INT                  : 15 16 37
+LLAVE_ABIERTA        : 
+LLAVE_CERRADA        : 
+MAS                  : 19 20 21 22 40 45 45
+MAS_IGUAL            : 46
+MAYOR                : 43
+MAYOR_IGUAL          : 44
+MENOR                : 
+MENOR_IGUAL          : 41
+MIENTRAS             : 
+NUMERO               : 15 17 20 21 22 22 24 25 26 26 28 29 30 30 32 33 34 34 37 38 39 41 42 43 44 46
+PARA                 : 
+POR                  : 27 28 29 30
+PRESENTAR            : 35 36
+PRODUCTO             : 27 28 29 30
+PUNTO                : 
+PUNTO_Y_COMA         : 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36
+RESTA                : 23 24 25 26
+STRING               : 18
+SUBSTRACTION         : 23 24 25 26
+SUMATORIA            : 19 20 21 22
+error                : 
+
+Nonterminals, with rules where they appear
+
+assignment_statement : 6
+condition            : 9
+condition_statement  : 7
+division_statement   : 14
+increment_statement  : 8
+print_statement      : 10
+product_statement    : 13
+program              : 0
+resta_statement      : 12
+statement            : 2 3
+statement_list       : 1 3
+suma_statement       : 11
+variable_declaration : 5
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . program
+    (1) program -> . statement_list
+    (2) statement_list -> . statement
+    (3) statement_list -> . statement_list statement
+    (4) statement -> .
+    (5) statement -> . variable_declaration
+    (6) statement -> . assignment_statement
+    (7) statement -> . condition_statement
+    (8) statement -> . increment_statement
+    (9) statement -> . condition
+    (10) statement -> . print_statement
+    (11) statement -> . suma_statement
+    (12) statement -> . resta_statement
+    (13) statement -> . product_statement
+    (14) statement -> . division_statement
+    (15) variable_declaration -> . DECLARACION INT IDENTIFICADOR NUMERO PUNTO_Y_COMA
+    (16) variable_declaration -> . DECLARACION INT IDENTIFICADOR PUNTO_Y_COMA
+    (17) variable_declaration -> . DECLARACION FLOAT IDENTIFICADOR NUMERO PUNTO_Y_COMA
+    (18) variable_declaration -> . DECLARACION STRING IDENTIFICADOR CADENA PUNTO_Y_COMA
+    (39) assignment_statement -> . IDENTIFICADOR IGUAL NUMERO
+    (40) assignment_statement -> . IDENTIFICADOR IGUAL IDENTIFICADOR MAS IDENTIFICADOR
+    (41) condition_statement -> . IDENTIFICADOR MENOR_IGUAL NUMERO
+    (42) condition_statement -> . IDENTIFICADOR IGUAL IGUAL NUMERO
+    (43) condition_statement -> . IDENTIFICADOR MAYOR NUMERO
+    (44) condition_statement -> . IDENTIFICADOR MAYOR_IGUAL NUMERO
+    (45) increment_statement -> . IDENTIFICADOR MAS MAS
+    (46) increment_statement -> . IDENTIFICADOR MAS_IGUAL NUMERO
+    (37) condition -> . INT IDENTIFICADOR IGUAL IGUAL NUMERO
+    (38) condition -> . IDENTIFICADOR IGUAL IGUAL NUMERO
+    (35) print_statement -> . PRESENTAR IDENTIFICADOR EN CONSOLA PUNTO_Y_COMA
+    (36) print_statement -> . PRESENTAR EN CONSOLA CADENA PUNTO_Y_COMA
+    (19) suma_statement -> . ALMACENAR EN IDENTIFICADOR SUMATORIA IDENTIFICADOR MAS IDENTIFICADOR PUNTO_Y_COMA
+    (20) suma_statement -> . ALMACENAR EN IDENTIFICADOR SUMATORIA NUMERO MAS IDENTIFICADOR PUNTO_Y_COMA
+    (21) suma_statement -> . ALMACENAR EN IDENTIFICADOR SUMATORIA IDENTIFICADOR MAS NUMERO PUNTO_Y_COMA
+    (22) suma_statement -> . ALMACENAR EN IDENTIFICADOR SUMATORIA NUMERO MAS NUMERO PUNTO_Y_COMA
+    (23) resta_statement -> . ALMACENAR EN IDENTIFICADOR SUBSTRACTION IDENTIFICADOR RESTA IDENTIFICADOR PUNTO_Y_COMA
+    (24) resta_statement -> . ALMACENAR EN IDENTIFICADOR SUBSTRACTION NUMERO RESTA IDENTIFICADOR PUNTO_Y_COMA
+    (25) resta_statement -> . ALMACENAR EN IDENTIFICADOR SUBSTRACTION IDENTIFICADOR RESTA NUMERO PUNTO_Y_COMA
+    (26) resta_statement -> . ALMACENAR EN IDENTIFICADOR SUBSTRACTION NUMERO RESTA NUMERO PUNTO_Y_COMA
+    (27) product_statement -> . ALMACENAR EN IDENTIFICADOR PRODUCTO IDENTIFICADOR POR IDENTIFICADOR PUNTO_Y_COMA
+    (28) product_statement -> . ALMACENAR EN IDENTIFICADOR PRODUCTO NUMERO POR IDENTIFICADOR PUNTO_Y_COMA
+    (29) product_statement -> . ALMACENAR EN IDENTIFICADOR PRODUCTO IDENTIFICADOR POR NUMERO PUNTO_Y_COMA
+    (30) product_statement -> . ALMACENAR EN IDENTIFICADOR PRODUCTO NUMERO POR NUMERO PUNTO_Y_COMA
+    (31) division_statement -> . ALMACENAR EN IDENTIFICADOR DIVISION IDENTIFICADOR DIVISION IDENTIFICADOR PUNTO_Y_COMA
+    (32) division_statement -> . ALMACENAR EN IDENTIFICADOR DIVISION NUMERO DIVISION IDENTIFICADOR PUNTO_Y_COMA
+    (33) division_statement -> . ALMACENAR EN IDENTIFICADOR DIVISION IDENTIFICADOR DIVISION NUMERO PUNTO_Y_COMA
+    (34) division_statement -> . ALMACENAR EN IDENTIFICADOR DIVISION NUMERO DIVISION NUMERO PUNTO_Y_COMA
+
+  ! shift/reduce conflict for DECLARACION resolved as shift
+  ! shift/reduce conflict for IDENTIFICADOR resolved as shift
+  ! shift/reduce conflict for INT resolved as shift
+  ! shift/reduce conflict for PRESENTAR resolved as shift
+  ! shift/reduce conflict for ALMACENAR resolved as shift
+    $end            reduce using rule 4 (statement -> .)
+    DECLARACION     shift and go to state 14
+    IDENTIFICADOR   shift and go to state 16
+    INT             shift and go to state 15
+    PRESENTAR       shift and go to state 17
+    ALMACENAR       shift and go to state 18
+
+  ! DECLARACION     [ reduce using rule 4 (statement -> .) ]
+  ! IDENTIFICADOR   [ reduce using rule 4 (statement -> .) ]
+  ! INT             [ reduce using rule 4 (statement -> .) ]
+  ! PRESENTAR       [ reduce using rule 4 (statement -> .) ]
+  ! ALMACENAR       [ reduce using rule 4 (statement -> .) ]
+
+    program                        shift and go to state 1
+    statement_list                 shift and go to state 2
+    statement                      shift and go to state 3
+    variable_declaration           shift and go to state 4
+    assignment_statement           shift and go to state 5
+    condition_statement            shift and go to state 6
+    increment_statement            shift and go to state 7
+    condition                      shift and go to state 8
+    print_statement                shift and go to state 9
+    suma_statement                 shift and go to state 10
+    resta_statement                shift and go to state 11
+    product_statement              shift and go to state 12
+    division_statement             shift and go to state 13
+
+state 1
+
+    (0) S' -> program .
+
+
+
+state 2
+
+    (1) program -> statement_list .
+    (3) statement_list -> statement_list . statement
+    (4) statement -> .
+    (5) statement -> . variable_declaration
+    (6) statement -> . assignment_statement
+    (7) statement -> . condition_statement
+    (8) statement -> . increment_statement
+    (9) statement -> . condition
+    (10) statement -> . print_statement
+    (11) statement -> . suma_statement
+    (12) statement -> . resta_statement
+    (13) statement -> . product_statement
+    (14) statement -> . division_statement
+    (15) variable_declaration -> . DECLARACION INT IDENTIFICADOR NUMERO PUNTO_Y_COMA
+    (16) variable_declaration -> . DECLARACION INT IDENTIFICADOR PUNTO_Y_COMA
+    (17) variable_declaration -> . DECLARACION FLOAT IDENTIFICADOR NUMERO PUNTO_Y_COMA
+    (18) variable_declaration -> . DECLARACION STRING IDENTIFICADOR CADENA PUNTO_Y_COMA
+    (39) assignment_statement -> . IDENTIFICADOR IGUAL NUMERO
+    (40) assignment_statement -> . IDENTIFICADOR IGUAL IDENTIFICADOR MAS IDENTIFICADOR
+    (41) condition_statement -> . IDENTIFICADOR MENOR_IGUAL NUMERO
+    (42) condition_statement -> . IDENTIFICADOR IGUAL IGUAL NUMERO
+    (43) condition_statement -> . IDENTIFICADOR MAYOR NUMERO
+    (44) condition_statement -> . IDENTIFICADOR MAYOR_IGUAL NUMERO
+    (45) increment_statement -> . IDENTIFICADOR MAS MAS
+    (46) increment_statement -> . IDENTIFICADOR MAS_IGUAL NUMERO
+    (37) condition -> . INT IDENTIFICADOR IGUAL IGUAL NUMERO
+    (38) condition -> . IDENTIFICADOR IGUAL IGUAL NUMERO
+    (35) print_statement -> . PRESENTAR IDENTIFICADOR EN CONSOLA PUNTO_Y_COMA
+    (36) print_statement -> . PRESENTAR EN CONSOLA CADENA PUNTO_Y_COMA
+    (19) suma_statement -> . ALMACENAR EN IDENTIFICADOR SUMATORIA IDENTIFICADOR MAS IDENTIFICADOR PUNTO_Y_COMA
+    (20) suma_statement -> . ALMACENAR EN IDENTIFICADOR SUMATORIA NUMERO MAS IDENTIFICADOR PUNTO_Y_COMA
+    (21) suma_statement -> . ALMACENAR EN IDENTIFICADOR SUMATORIA IDENTIFICADOR MAS NUMERO PUNTO_Y_COMA
+    (22) suma_statement -> . ALMACENAR EN IDENTIFICADOR SUMATORIA NUMERO MAS NUMERO PUNTO_Y_COMA
+    (23) resta_statement -> . ALMACENAR EN IDENTIFICADOR SUBSTRACTION IDENTIFICADOR RESTA IDENTIFICADOR PUNTO_Y_COMA
+    (24) resta_statement -> . ALMACENAR EN IDENTIFICADOR SUBSTRACTION NUMERO RESTA IDENTIFICADOR PUNTO_Y_COMA
+    (25) resta_statement -> . ALMACENAR EN IDENTIFICADOR SUBSTRACTION IDENTIFICADOR RESTA NUMERO PUNTO_Y_COMA
+    (26) resta_statement -> . ALMACENAR EN IDENTIFICADOR SUBSTRACTION NUMERO RESTA NUMERO PUNTO_Y_COMA
+    (27) product_statement -> . ALMACENAR EN IDENTIFICADOR PRODUCTO IDENTIFICADOR POR IDENTIFICADOR PUNTO_Y_COMA
+    (28) product_statement -> . ALMACENAR EN IDENTIFICADOR PRODUCTO NUMERO POR IDENTIFICADOR PUNTO_Y_COMA
+    (29) product_statement -> . ALMACENAR EN IDENTIFICADOR PRODUCTO IDENTIFICADOR POR NUMERO PUNTO_Y_COMA
+    (30) product_statement -> . ALMACENAR EN IDENTIFICADOR PRODUCTO NUMERO POR NUMERO PUNTO_Y_COMA
+    (31) division_statement -> . ALMACENAR EN IDENTIFICADOR DIVISION IDENTIFICADOR DIVISION IDENTIFICADOR PUNTO_Y_COMA
+    (32) division_statement -> . ALMACENAR EN IDENTIFICADOR DIVISION NUMERO DIVISION IDENTIFICADOR PUNTO_Y_COMA
+    (33) division_statement -> . ALMACENAR EN IDENTIFICADOR DIVISION IDENTIFICADOR DIVISION NUMERO PUNTO_Y_COMA
+    (34) division_statement -> . ALMACENAR EN IDENTIFICADOR DIVISION NUMERO DIVISION NUMERO PUNTO_Y_COMA
+
+  ! reduce/reduce conflict for $end resolved using rule 1 (program -> statement_list .)
+  ! shift/reduce conflict for DECLARACION resolved as shift
+  ! shift/reduce conflict for IDENTIFICADOR resolved as shift
+  ! shift/reduce conflict for INT resolved as shift
+  ! shift/reduce conflict for PRESENTAR resolved as shift
+  ! shift/reduce conflict for ALMACENAR resolved as shift
+    $end            reduce using rule 1 (program -> statement_list .)
+    DECLARACION     shift and go to state 14
+    IDENTIFICADOR   shift and go to state 16
+    INT             shift and go to state 15
+    PRESENTAR       shift and go to state 17
+    ALMACENAR       shift and go to state 18
+
+  ! DECLARACION     [ reduce using rule 4 (statement -> .) ]
+  ! IDENTIFICADOR   [ reduce using rule 4 (statement -> .) ]
+  ! INT             [ reduce using rule 4 (statement -> .) ]
+  ! PRESENTAR       [ reduce using rule 4 (statement -> .) ]
+  ! ALMACENAR       [ reduce using rule 4 (statement -> .) ]
+  ! $end            [ reduce using rule 4 (statement -> .) ]
+
+    statement                      shift and go to state 19
+    variable_declaration           shift and go to state 4
+    assignment_statement           shift and go to state 5
+    condition_statement            shift and go to state 6
+    increment_statement            shift and go to state 7
+    condition                      shift and go to state 8
+    print_statement                shift and go to state 9
+    suma_statement                 shift and go to state 10
+    resta_statement                shift and go to state 11
+    product_statement              shift and go to state 12
+    division_statement             shift and go to state 13
+
+state 3
+
+    (2) statement_list -> statement .
+
+    DECLARACION     reduce using rule 2 (statement_list -> statement .)
+    IDENTIFICADOR   reduce using rule 2 (statement_list -> statement .)
+    INT             reduce using rule 2 (statement_list -> statement .)
+    PRESENTAR       reduce using rule 2 (statement_list -> statement .)
+    ALMACENAR       reduce using rule 2 (statement_list -> statement .)
+    $end            reduce using rule 2 (statement_list -> statement .)
+
+
+state 4
+
+    (5) statement -> variable_declaration .
+
+    DECLARACION     reduce using rule 5 (statement -> variable_declaration .)
+    IDENTIFICADOR   reduce using rule 5 (statement -> variable_declaration .)
+    INT             reduce using rule 5 (statement -> variable_declaration .)
+    PRESENTAR       reduce using rule 5 (statement -> variable_declaration .)
+    ALMACENAR       reduce using rule 5 (statement -> variable_declaration .)
+    $end            reduce using rule 5 (statement -> variable_declaration .)
+
+
+state 5
+
+    (6) statement -> assignment_statement .
+
+    DECLARACION     reduce using rule 6 (statement -> assignment_statement .)
+    IDENTIFICADOR   reduce using rule 6 (statement -> assignment_statement .)
+    INT             reduce using rule 6 (statement -> assignment_statement .)
+    PRESENTAR       reduce using rule 6 (statement -> assignment_statement .)
+    ALMACENAR       reduce using rule 6 (statement -> assignment_statement .)
+    $end            reduce using rule 6 (statement -> assignment_statement .)
+
+
+state 6
+
+    (7) statement -> condition_statement .
+
+    DECLARACION     reduce using rule 7 (statement -> condition_statement .)
+    IDENTIFICADOR   reduce using rule 7 (statement -> condition_statement .)
+    INT             reduce using rule 7 (statement -> condition_statement .)
+    PRESENTAR       reduce using rule 7 (statement -> condition_statement .)
+    ALMACENAR       reduce using rule 7 (statement -> condition_statement .)
+    $end            reduce using rule 7 (statement -> condition_statement .)
+
+
+state 7
+
+    (8) statement -> increment_statement .
+
+    DECLARACION     reduce using rule 8 (statement -> increment_statement .)
+    IDENTIFICADOR   reduce using rule 8 (statement -> increment_statement .)
+    INT             reduce using rule 8 (statement -> increment_statement .)
+    PRESENTAR       reduce using rule 8 (statement -> increment_statement .)
+    ALMACENAR       reduce using rule 8 (statement -> increment_statement .)
+    $end            reduce using rule 8 (statement -> increment_statement .)
+
+
+state 8
+
+    (9) statement -> condition .
+
+    DECLARACION     reduce using rule 9 (statement -> condition .)
+    IDENTIFICADOR   reduce using rule 9 (statement -> condition .)
+    INT             reduce using rule 9 (statement -> condition .)
+    PRESENTAR       reduce using rule 9 (statement -> condition .)
+    ALMACENAR       reduce using rule 9 (statement -> condition .)
+    $end            reduce using rule 9 (statement -> condition .)
+
+
+state 9
+
+    (10) statement -> print_statement .
+
+    DECLARACION     reduce using rule 10 (statement -> print_statement .)
+    IDENTIFICADOR   reduce using rule 10 (statement -> print_statement .)
+    INT             reduce using rule 10 (statement -> print_statement .)
+    PRESENTAR       reduce using rule 10 (statement -> print_statement .)
+    ALMACENAR       reduce using rule 10 (statement -> print_statement .)
+    $end            reduce using rule 10 (statement -> print_statement .)
+
+
+state 10
+
+    (11) statement -> suma_statement .
+
+    DECLARACION     reduce using rule 11 (statement -> suma_statement .)
+    IDENTIFICADOR   reduce using rule 11 (statement -> suma_statement .)
+    INT             reduce using rule 11 (statement -> suma_statement .)
+    PRESENTAR       reduce using rule 11 (statement -> suma_statement .)
+    ALMACENAR       reduce using rule 11 (statement -> suma_statement .)
+    $end            reduce using rule 11 (statement -> suma_statement .)
+
+
+state 11
+
+    (12) statement -> resta_statement .
+
+    DECLARACION     reduce using rule 12 (statement -> resta_statement .)
+    IDENTIFICADOR   reduce using rule 12 (statement -> resta_statement .)
+    INT             reduce using rule 12 (statement -> resta_statement .)
+    PRESENTAR       reduce using rule 12 (statement -> resta_statement .)
+    ALMACENAR       reduce using rule 12 (statement -> resta_statement .)
+    $end            reduce using rule 12 (statement -> resta_statement .)
+
+
+state 12
+
+    (13) statement -> product_statement .
+
+    DECLARACION     reduce using rule 13 (statement -> product_statement .)
+    IDENTIFICADOR   reduce using rule 13 (statement -> product_statement .)
+    INT             reduce using rule 13 (statement -> product_statement .)
+    PRESENTAR       reduce using rule 13 (statement -> product_statement .)
+    ALMACENAR       reduce using rule 13 (statement -> product_statement .)
+    $end            reduce using rule 13 (statement -> product_statement .)
+
+
+state 13
+
+    (14) statement -> division_statement .
+
+    DECLARACION     reduce using rule 14 (statement -> division_statement .)
+    IDENTIFICADOR   reduce using rule 14 (statement -> division_statement .)
+    INT             reduce using rule 14 (statement -> division_statement .)
+    PRESENTAR       reduce using rule 14 (statement -> division_statement .)
+    ALMACENAR       reduce using rule 14 (statement -> division_statement .)
+    $end            reduce using rule 14 (statement -> division_statement .)
+
+
+state 14
+
+    (15) variable_declaration -> DECLARACION . INT IDENTIFICADOR NUMERO PUNTO_Y_COMA
+    (16) variable_declaration -> DECLARACION . INT IDENTIFICADOR PUNTO_Y_COMA
+    (17) variable_declaration -> DECLARACION . FLOAT IDENTIFICADOR NUMERO PUNTO_Y_COMA
+    (18) variable_declaration -> DECLARACION . STRING IDENTIFICADOR CADENA PUNTO_Y_COMA
+
+    INT             shift and go to state 20
+    FLOAT           shift and go to state 21
+    STRING          shift and go to state 22
+
+
+state 15
+
+    (37) condition -> INT . IDENTIFICADOR IGUAL IGUAL NUMERO
+
+    IDENTIFICADOR   shift and go to state 23
+
+
+state 16
+
+    (39) assignment_statement -> IDENTIFICADOR . IGUAL NUMERO
+    (40) assignment_statement -> IDENTIFICADOR . IGUAL IDENTIFICADOR MAS IDENTIFICADOR
+    (41) condition_statement -> IDENTIFICADOR . MENOR_IGUAL NUMERO
+    (42) condition_statement -> IDENTIFICADOR . IGUAL IGUAL NUMERO
+    (43) condition_statement -> IDENTIFICADOR . MAYOR NUMERO
+    (44) condition_statement -> IDENTIFICADOR . MAYOR_IGUAL NUMERO
+    (45) increment_statement -> IDENTIFICADOR . MAS MAS
+    (46) increment_statement -> IDENTIFICADOR . MAS_IGUAL NUMERO
+    (38) condition -> IDENTIFICADOR . IGUAL IGUAL NUMERO
+
+    IGUAL           shift and go to state 24
+    MENOR_IGUAL     shift and go to state 26
+    MAYOR           shift and go to state 27
+    MAYOR_IGUAL     shift and go to state 28
+    MAS             shift and go to state 25
+    MAS_IGUAL       shift and go to state 29
+
+
+state 17
+
+    (35) print_statement -> PRESENTAR . IDENTIFICADOR EN CONSOLA PUNTO_Y_COMA
+    (36) print_statement -> PRESENTAR . EN CONSOLA CADENA PUNTO_Y_COMA
+
+    IDENTIFICADOR   shift and go to state 30
+    EN              shift and go to state 31
+
+
+state 18
+
+    (19) suma_statement -> ALMACENAR . EN IDENTIFICADOR SUMATORIA IDENTIFICADOR MAS IDENTIFICADOR PUNTO_Y_COMA
+    (20) suma_statement -> ALMACENAR . EN IDENTIFICADOR SUMATORIA NUMERO MAS IDENTIFICADOR PUNTO_Y_COMA
+    (21) suma_statement -> ALMACENAR . EN IDENTIFICADOR SUMATORIA IDENTIFICADOR MAS NUMERO PUNTO_Y_COMA
+    (22) suma_statement -> ALMACENAR . EN IDENTIFICADOR SUMATORIA NUMERO MAS NUMERO PUNTO_Y_COMA
+    (23) resta_statement -> ALMACENAR . EN IDENTIFICADOR SUBSTRACTION IDENTIFICADOR RESTA IDENTIFICADOR PUNTO_Y_COMA
+    (24) resta_statement -> ALMACENAR . EN IDENTIFICADOR SUBSTRACTION NUMERO RESTA IDENTIFICADOR PUNTO_Y_COMA
+    (25) resta_statement -> ALMACENAR . EN IDENTIFICADOR SUBSTRACTION IDENTIFICADOR RESTA NUMERO PUNTO_Y_COMA
+    (26) resta_statement -> ALMACENAR . EN IDENTIFICADOR SUBSTRACTION NUMERO RESTA NUMERO PUNTO_Y_COMA
+    (27) product_statement -> ALMACENAR . EN IDENTIFICADOR PRODUCTO IDENTIFICADOR POR IDENTIFICADOR PUNTO_Y_COMA
+    (28) product_statement -> ALMACENAR . EN IDENTIFICADOR PRODUCTO NUMERO POR IDENTIFICADOR PUNTO_Y_COMA
+    (29) product_statement -> ALMACENAR . EN IDENTIFICADOR PRODUCTO IDENTIFICADOR POR NUMERO PUNTO_Y_COMA
+    (30) product_statement -> ALMACENAR . EN IDENTIFICADOR PRODUCTO NUMERO POR NUMERO PUNTO_Y_COMA
+    (31) division_statement -> ALMACENAR . EN IDENTIFICADOR DIVISION IDENTIFICADOR DIVISION IDENTIFICADOR PUNTO_Y_COMA
+    (32) division_statement -> ALMACENAR . EN IDENTIFICADOR DIVISION NUMERO DIVISION IDENTIFICADOR PUNTO_Y_COMA
+    (33) division_statement -> ALMACENAR . EN IDENTIFICADOR DIVISION IDENTIFICADOR DIVISION NUMERO PUNTO_Y_COMA
+    (34) division_statement -> ALMACENAR . EN IDENTIFICADOR DIVISION NUMERO DIVISION NUMERO PUNTO_Y_COMA
+
+    EN              shift and go to state 32
+
+
+state 19
+
+    (3) statement_list -> statement_list statement .
+
+    DECLARACION     reduce using rule 3 (statement_list -> statement_list statement .)
+    IDENTIFICADOR   reduce using rule 3 (statement_list -> statement_list statement .)
+    INT             reduce using rule 3 (statement_list -> statement_list statement .)
+    PRESENTAR       reduce using rule 3 (statement_list -> statement_list statement .)
+    ALMACENAR       reduce using rule 3 (statement_list -> statement_list statement .)
+    $end            reduce using rule 3 (statement_list -> statement_list statement .)
+
+
+state 20
+
+    (15) variable_declaration -> DECLARACION INT . IDENTIFICADOR NUMERO PUNTO_Y_COMA
+    (16) variable_declaration -> DECLARACION INT . IDENTIFICADOR PUNTO_Y_COMA
+
+    IDENTIFICADOR   shift and go to state 33
+
+
+state 21
+
+    (17) variable_declaration -> DECLARACION FLOAT . IDENTIFICADOR NUMERO PUNTO_Y_COMA
+
+    IDENTIFICADOR   shift and go to state 34
+
+
+state 22
+
+    (18) variable_declaration -> DECLARACION STRING . IDENTIFICADOR CADENA PUNTO_Y_COMA
+
+    IDENTIFICADOR   shift and go to state 35
+
+
+state 23
+
+    (37) condition -> INT IDENTIFICADOR . IGUAL IGUAL NUMERO
+
+    IGUAL           shift and go to state 36
+
+
+state 24
+
+    (39) assignment_statement -> IDENTIFICADOR IGUAL . NUMERO
+    (40) assignment_statement -> IDENTIFICADOR IGUAL . IDENTIFICADOR MAS IDENTIFICADOR
+    (42) condition_statement -> IDENTIFICADOR IGUAL . IGUAL NUMERO
+    (38) condition -> IDENTIFICADOR IGUAL . IGUAL NUMERO
+
+    NUMERO          shift and go to state 39
+    IDENTIFICADOR   shift and go to state 37
+    IGUAL           shift and go to state 38
+
+
+state 25
+
+    (45) increment_statement -> IDENTIFICADOR MAS . MAS
+
+    MAS             shift and go to state 40
+
+
+state 26
+
+    (41) condition_statement -> IDENTIFICADOR MENOR_IGUAL . NUMERO
+
+    NUMERO          shift and go to state 41
+
+
+state 27
+
+    (43) condition_statement -> IDENTIFICADOR MAYOR . NUMERO
+
+    NUMERO          shift and go to state 42
+
+
+state 28
+
+    (44) condition_statement -> IDENTIFICADOR MAYOR_IGUAL . NUMERO
+
+    NUMERO          shift and go to state 43
+
+
+state 29
+
+    (46) increment_statement -> IDENTIFICADOR MAS_IGUAL . NUMERO
+
+    NUMERO          shift and go to state 44
+
+
+state 30
+
+    (35) print_statement -> PRESENTAR IDENTIFICADOR . EN CONSOLA PUNTO_Y_COMA
+
+    EN              shift and go to state 45
+
+
+state 31
+
+    (36) print_statement -> PRESENTAR EN . CONSOLA CADENA PUNTO_Y_COMA
+
+    CONSOLA         shift and go to state 46
+
+
+state 32
+
+    (19) suma_statement -> ALMACENAR EN . IDENTIFICADOR SUMATORIA IDENTIFICADOR MAS IDENTIFICADOR PUNTO_Y_COMA
+    (20) suma_statement -> ALMACENAR EN . IDENTIFICADOR SUMATORIA NUMERO MAS IDENTIFICADOR PUNTO_Y_COMA
+    (21) suma_statement -> ALMACENAR EN . IDENTIFICADOR SUMATORIA IDENTIFICADOR MAS NUMERO PUNTO_Y_COMA
+    (22) suma_statement -> ALMACENAR EN . IDENTIFICADOR SUMATORIA NUMERO MAS NUMERO PUNTO_Y_COMA
+    (23) resta_statement -> ALMACENAR EN . IDENTIFICADOR SUBSTRACTION IDENTIFICADOR RESTA IDENTIFICADOR PUNTO_Y_COMA
+    (24) resta_statement -> ALMACENAR EN . IDENTIFICADOR SUBSTRACTION NUMERO RESTA IDENTIFICADOR PUNTO_Y_COMA
+    (25) resta_statement -> ALMACENAR EN . IDENTIFICADOR SUBSTRACTION IDENTIFICADOR RESTA NUMERO PUNTO_Y_COMA
+    (26) resta_statement -> ALMACENAR EN . IDENTIFICADOR SUBSTRACTION NUMERO RESTA NUMERO PUNTO_Y_COMA
+    (27) product_statement -> ALMACENAR EN . IDENTIFICADOR PRODUCTO IDENTIFICADOR POR IDENTIFICADOR PUNTO_Y_COMA
+    (28) product_statement -> ALMACENAR EN . IDENTIFICADOR PRODUCTO NUMERO POR IDENTIFICADOR PUNTO_Y_COMA
+    (29) product_statement -> ALMACENAR EN . IDENTIFICADOR PRODUCTO IDENTIFICADOR POR NUMERO PUNTO_Y_COMA
+    (30) product_statement -> ALMACENAR EN . IDENTIFICADOR PRODUCTO NUMERO POR NUMERO PUNTO_Y_COMA
+    (31) division_statement -> ALMACENAR EN . IDENTIFICADOR DIVISION IDENTIFICADOR DIVISION IDENTIFICADOR PUNTO_Y_COMA
+    (32) division_statement -> ALMACENAR EN . IDENTIFICADOR DIVISION NUMERO DIVISION IDENTIFICADOR PUNTO_Y_COMA
+    (33) division_statement -> ALMACENAR EN . IDENTIFICADOR DIVISION IDENTIFICADOR DIVISION NUMERO PUNTO_Y_COMA
+    (34) division_statement -> ALMACENAR EN . IDENTIFICADOR DIVISION NUMERO DIVISION NUMERO PUNTO_Y_COMA
+
+    IDENTIFICADOR   shift and go to state 47
+
+
+state 33
+
+    (15) variable_declaration -> DECLARACION INT IDENTIFICADOR . NUMERO PUNTO_Y_COMA
+    (16) variable_declaration -> DECLARACION INT IDENTIFICADOR . PUNTO_Y_COMA
+
+    NUMERO          shift and go to state 48
+    PUNTO_Y_COMA    shift and go to state 49
+
+
+state 34
+
+    (17) variable_declaration -> DECLARACION FLOAT IDENTIFICADOR . NUMERO PUNTO_Y_COMA
+
+    NUMERO          shift and go to state 50
+
+
+state 35
+
+    (18) variable_declaration -> DECLARACION STRING IDENTIFICADOR . CADENA PUNTO_Y_COMA
+
+    CADENA          shift and go to state 51
+
+
+state 36
+
+    (37) condition -> INT IDENTIFICADOR IGUAL . IGUAL NUMERO
+
+    IGUAL           shift and go to state 52
+
+
+state 37
+
+    (40) assignment_statement -> IDENTIFICADOR IGUAL IDENTIFICADOR . MAS IDENTIFICADOR
+
+    MAS             shift and go to state 53
+
+
+state 38
+
+    (42) condition_statement -> IDENTIFICADOR IGUAL IGUAL . NUMERO
+    (38) condition -> IDENTIFICADOR IGUAL IGUAL . NUMERO
+
+    NUMERO          shift and go to state 54
+
+
+state 39
+
+    (39) assignment_statement -> IDENTIFICADOR IGUAL NUMERO .
+
+    DECLARACION     reduce using rule 39 (assignment_statement -> IDENTIFICADOR IGUAL NUMERO .)
+    IDENTIFICADOR   reduce using rule 39 (assignment_statement -> IDENTIFICADOR IGUAL NUMERO .)
+    INT             reduce using rule 39 (assignment_statement -> IDENTIFICADOR IGUAL NUMERO .)
+    PRESENTAR       reduce using rule 39 (assignment_statement -> IDENTIFICADOR IGUAL NUMERO .)
+    ALMACENAR       reduce using rule 39 (assignment_statement -> IDENTIFICADOR IGUAL NUMERO .)
+    $end            reduce using rule 39 (assignment_statement -> IDENTIFICADOR IGUAL NUMERO .)
+
+
+state 40
+
+    (45) increment_statement -> IDENTIFICADOR MAS MAS .
+
+    DECLARACION     reduce using rule 45 (increment_statement -> IDENTIFICADOR MAS MAS .)
+    IDENTIFICADOR   reduce using rule 45 (increment_statement -> IDENTIFICADOR MAS MAS .)
+    INT             reduce using rule 45 (increment_statement -> IDENTIFICADOR MAS MAS .)
+    PRESENTAR       reduce using rule 45 (increment_statement -> IDENTIFICADOR MAS MAS .)
+    ALMACENAR       reduce using rule 45 (increment_statement -> IDENTIFICADOR MAS MAS .)
+    $end            reduce using rule 45 (increment_statement -> IDENTIFICADOR MAS MAS .)
+
+
+state 41
+
+    (41) condition_statement -> IDENTIFICADOR MENOR_IGUAL NUMERO .
+
+    DECLARACION     reduce using rule 41 (condition_statement -> IDENTIFICADOR MENOR_IGUAL NUMERO .)
+    IDENTIFICADOR   reduce using rule 41 (condition_statement -> IDENTIFICADOR MENOR_IGUAL NUMERO .)
+    INT             reduce using rule 41 (condition_statement -> IDENTIFICADOR MENOR_IGUAL NUMERO .)
+    PRESENTAR       reduce using rule 41 (condition_statement -> IDENTIFICADOR MENOR_IGUAL NUMERO .)
+    ALMACENAR       reduce using rule 41 (condition_statement -> IDENTIFICADOR MENOR_IGUAL NUMERO .)
+    $end            reduce using rule 41 (condition_statement -> IDENTIFICADOR MENOR_IGUAL NUMERO .)
+
+
+state 42
+
+    (43) condition_statement -> IDENTIFICADOR MAYOR NUMERO .
+
+    DECLARACION     reduce using rule 43 (condition_statement -> IDENTIFICADOR MAYOR NUMERO .)
+    IDENTIFICADOR   reduce using rule 43 (condition_statement -> IDENTIFICADOR MAYOR NUMERO .)
+    INT             reduce using rule 43 (condition_statement -> IDENTIFICADOR MAYOR NUMERO .)
+    PRESENTAR       reduce using rule 43 (condition_statement -> IDENTIFICADOR MAYOR NUMERO .)
+    ALMACENAR       reduce using rule 43 (condition_statement -> IDENTIFICADOR MAYOR NUMERO .)
+    $end            reduce using rule 43 (condition_statement -> IDENTIFICADOR MAYOR NUMERO .)
+
+
+state 43
+
+    (44) condition_statement -> IDENTIFICADOR MAYOR_IGUAL NUMERO .
+
+    DECLARACION     reduce using rule 44 (condition_statement -> IDENTIFICADOR MAYOR_IGUAL NUMERO .)
+    IDENTIFICADOR   reduce using rule 44 (condition_statement -> IDENTIFICADOR MAYOR_IGUAL NUMERO .)
+    INT             reduce using rule 44 (condition_statement -> IDENTIFICADOR MAYOR_IGUAL NUMERO .)
+    PRESENTAR       reduce using rule 44 (condition_statement -> IDENTIFICADOR MAYOR_IGUAL NUMERO .)
+    ALMACENAR       reduce using rule 44 (condition_statement -> IDENTIFICADOR MAYOR_IGUAL NUMERO .)
+    $end            reduce using rule 44 (condition_statement -> IDENTIFICADOR MAYOR_IGUAL NUMERO .)
+
+
+state 44
+
+    (46) increment_statement -> IDENTIFICADOR MAS_IGUAL NUMERO .
+
+    DECLARACION     reduce using rule 46 (increment_statement -> IDENTIFICADOR MAS_IGUAL NUMERO .)
+    IDENTIFICADOR   reduce using rule 46 (increment_statement -> IDENTIFICADOR MAS_IGUAL NUMERO .)
+    INT             reduce using rule 46 (increment_statement -> IDENTIFICADOR MAS_IGUAL NUMERO .)
+    PRESENTAR       reduce using rule 46 (increment_statement -> IDENTIFICADOR MAS_IGUAL NUMERO .)
+    ALMACENAR       reduce using rule 46 (increment_statement -> IDENTIFICADOR MAS_IGUAL NUMERO .)
+    $end            reduce using rule 46 (increment_statement -> IDENTIFICADOR MAS_IGUAL NUMERO .)
+
+
+state 45
+
+    (35) print_statement -> PRESENTAR IDENTIFICADOR EN . CONSOLA PUNTO_Y_COMA
+
+    CONSOLA         shift and go to state 55
+
+
+state 46
+
+    (36) print_statement -> PRESENTAR EN CONSOLA . CADENA PUNTO_Y_COMA
+
+    CADENA          shift and go to state 56
+
+
+state 47
+
+    (19) suma_statement -> ALMACENAR EN IDENTIFICADOR . SUMATORIA IDENTIFICADOR MAS IDENTIFICADOR PUNTO_Y_COMA
+    (20) suma_statement -> ALMACENAR EN IDENTIFICADOR . SUMATORIA NUMERO MAS IDENTIFICADOR PUNTO_Y_COMA
+    (21) suma_statement -> ALMACENAR EN IDENTIFICADOR . SUMATORIA IDENTIFICADOR MAS NUMERO PUNTO_Y_COMA
+    (22) suma_statement -> ALMACENAR EN IDENTIFICADOR . SUMATORIA NUMERO MAS NUMERO PUNTO_Y_COMA
+    (23) resta_statement -> ALMACENAR EN IDENTIFICADOR . SUBSTRACTION IDENTIFICADOR RESTA IDENTIFICADOR PUNTO_Y_COMA
+    (24) resta_statement -> ALMACENAR EN IDENTIFICADOR . SUBSTRACTION NUMERO RESTA IDENTIFICADOR PUNTO_Y_COMA
+    (25) resta_statement -> ALMACENAR EN IDENTIFICADOR . SUBSTRACTION IDENTIFICADOR RESTA NUMERO PUNTO_Y_COMA
+    (26) resta_statement -> ALMACENAR EN IDENTIFICADOR . SUBSTRACTION NUMERO RESTA NUMERO PUNTO_Y_COMA
+    (27) product_statement -> ALMACENAR EN IDENTIFICADOR . PRODUCTO IDENTIFICADOR POR IDENTIFICADOR PUNTO_Y_COMA
+    (28) product_statement -> ALMACENAR EN IDENTIFICADOR . PRODUCTO NUMERO POR IDENTIFICADOR PUNTO_Y_COMA
+    (29) product_statement -> ALMACENAR EN IDENTIFICADOR . PRODUCTO IDENTIFICADOR POR NUMERO PUNTO_Y_COMA
+    (30) product_statement -> ALMACENAR EN IDENTIFICADOR . PRODUCTO NUMERO POR NUMERO PUNTO_Y_COMA
+    (31) division_statement -> ALMACENAR EN IDENTIFICADOR . DIVISION IDENTIFICADOR DIVISION IDENTIFICADOR PUNTO_Y_COMA
+    (32) division_statement -> ALMACENAR EN IDENTIFICADOR . DIVISION NUMERO DIVISION IDENTIFICADOR PUNTO_Y_COMA
+    (33) division_statement -> ALMACENAR EN IDENTIFICADOR . DIVISION IDENTIFICADOR DIVISION NUMERO PUNTO_Y_COMA
+    (34) division_statement -> ALMACENAR EN IDENTIFICADOR . DIVISION NUMERO DIVISION NUMERO PUNTO_Y_COMA
+
+    SUMATORIA       shift and go to state 57
+    SUBSTRACTION    shift and go to state 58
+    PRODUCTO        shift and go to state 59
+    DIVISION        shift and go to state 60
+
+
+state 48
+
+    (15) variable_declaration -> DECLARACION INT IDENTIFICADOR NUMERO . PUNTO_Y_COMA
+
+    PUNTO_Y_COMA    shift and go to state 61
+
+
+state 49
+
+    (16) variable_declaration -> DECLARACION INT IDENTIFICADOR PUNTO_Y_COMA .
+
+    DECLARACION     reduce using rule 16 (variable_declaration -> DECLARACION INT IDENTIFICADOR PUNTO_Y_COMA .)
+    IDENTIFICADOR   reduce using rule 16 (variable_declaration -> DECLARACION INT IDENTIFICADOR PUNTO_Y_COMA .)
+    INT             reduce using rule 16 (variable_declaration -> DECLARACION INT IDENTIFICADOR PUNTO_Y_COMA .)
+    PRESENTAR       reduce using rule 16 (variable_declaration -> DECLARACION INT IDENTIFICADOR PUNTO_Y_COMA .)
+    ALMACENAR       reduce using rule 16 (variable_declaration -> DECLARACION INT IDENTIFICADOR PUNTO_Y_COMA .)
+    $end            reduce using rule 16 (variable_declaration -> DECLARACION INT IDENTIFICADOR PUNTO_Y_COMA .)
+
+
+state 50
+
+    (17) variable_declaration -> DECLARACION FLOAT IDENTIFICADOR NUMERO . PUNTO_Y_COMA
+
+    PUNTO_Y_COMA    shift and go to state 62
+
+
+state 51
+
+    (18) variable_declaration -> DECLARACION STRING IDENTIFICADOR CADENA . PUNTO_Y_COMA
+
+    PUNTO_Y_COMA    shift and go to state 63
+
+
+state 52
+
+    (37) condition -> INT IDENTIFICADOR IGUAL IGUAL . NUMERO
+
+    NUMERO          shift and go to state 64
+
+
+state 53
+
+    (40) assignment_statement -> IDENTIFICADOR IGUAL IDENTIFICADOR MAS . IDENTIFICADOR
+
+    IDENTIFICADOR   shift and go to state 65
+
+
+state 54
+
+    (42) condition_statement -> IDENTIFICADOR IGUAL IGUAL NUMERO .
+    (38) condition -> IDENTIFICADOR IGUAL IGUAL NUMERO .
+
+  ! reduce/reduce conflict for DECLARACION resolved using rule 38 (condition -> IDENTIFICADOR IGUAL IGUAL NUMERO .)
+  ! reduce/reduce conflict for IDENTIFICADOR resolved using rule 38 (condition -> IDENTIFICADOR IGUAL IGUAL NUMERO .)
+  ! reduce/reduce conflict for INT resolved using rule 38 (condition -> IDENTIFICADOR IGUAL IGUAL NUMERO .)
+  ! reduce/reduce conflict for PRESENTAR resolved using rule 38 (condition -> IDENTIFICADOR IGUAL IGUAL NUMERO .)
+  ! reduce/reduce conflict for ALMACENAR resolved using rule 38 (condition -> IDENTIFICADOR IGUAL IGUAL NUMERO .)
+  ! reduce/reduce conflict for $end resolved using rule 38 (condition -> IDENTIFICADOR IGUAL IGUAL NUMERO .)
+    DECLARACION     reduce using rule 38 (condition -> IDENTIFICADOR IGUAL IGUAL NUMERO .)
+    IDENTIFICADOR   reduce using rule 38 (condition -> IDENTIFICADOR IGUAL IGUAL NUMERO .)
+    INT             reduce using rule 38 (condition -> IDENTIFICADOR IGUAL IGUAL NUMERO .)
+    PRESENTAR       reduce using rule 38 (condition -> IDENTIFICADOR IGUAL IGUAL NUMERO .)
+    ALMACENAR       reduce using rule 38 (condition -> IDENTIFICADOR IGUAL IGUAL NUMERO .)
+    $end            reduce using rule 38 (condition -> IDENTIFICADOR IGUAL IGUAL NUMERO .)
+
+  ! DECLARACION     [ reduce using rule 42 (condition_statement -> IDENTIFICADOR IGUAL IGUAL NUMERO .) ]
+  ! IDENTIFICADOR   [ reduce using rule 42 (condition_statement -> IDENTIFICADOR IGUAL IGUAL NUMERO .) ]
+  ! INT             [ reduce using rule 42 (condition_statement -> IDENTIFICADOR IGUAL IGUAL NUMERO .) ]
+  ! PRESENTAR       [ reduce using rule 42 (condition_statement -> IDENTIFICADOR IGUAL IGUAL NUMERO .) ]
+  ! ALMACENAR       [ reduce using rule 42 (condition_statement -> IDENTIFICADOR IGUAL IGUAL NUMERO .) ]
+  ! $end            [ reduce using rule 42 (condition_statement -> IDENTIFICADOR IGUAL IGUAL NUMERO .) ]
+
+
+state 55
+
+    (35) print_statement -> PRESENTAR IDENTIFICADOR EN CONSOLA . PUNTO_Y_COMA
+
+    PUNTO_Y_COMA    shift and go to state 66
+
+
+state 56
+
+    (36) print_statement -> PRESENTAR EN CONSOLA CADENA . PUNTO_Y_COMA
+
+    PUNTO_Y_COMA    shift and go to state 67
+
+
+state 57
+
+    (19) suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA . IDENTIFICADOR MAS IDENTIFICADOR PUNTO_Y_COMA
+    (20) suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA . NUMERO MAS IDENTIFICADOR PUNTO_Y_COMA
+    (21) suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA . IDENTIFICADOR MAS NUMERO PUNTO_Y_COMA
+    (22) suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA . NUMERO MAS NUMERO PUNTO_Y_COMA
+
+    IDENTIFICADOR   shift and go to state 68
+    NUMERO          shift and go to state 69
+
+
+state 58
+
+    (23) resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION . IDENTIFICADOR RESTA IDENTIFICADOR PUNTO_Y_COMA
+    (24) resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION . NUMERO RESTA IDENTIFICADOR PUNTO_Y_COMA
+    (25) resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION . IDENTIFICADOR RESTA NUMERO PUNTO_Y_COMA
+    (26) resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION . NUMERO RESTA NUMERO PUNTO_Y_COMA
+
+    IDENTIFICADOR   shift and go to state 70
+    NUMERO          shift and go to state 71
+
+
+state 59
+
+    (27) product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO . IDENTIFICADOR POR IDENTIFICADOR PUNTO_Y_COMA
+    (28) product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO . NUMERO POR IDENTIFICADOR PUNTO_Y_COMA
+    (29) product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO . IDENTIFICADOR POR NUMERO PUNTO_Y_COMA
+    (30) product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO . NUMERO POR NUMERO PUNTO_Y_COMA
+
+    IDENTIFICADOR   shift and go to state 72
+    NUMERO          shift and go to state 73
+
+
+state 60
+
+    (31) division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION . IDENTIFICADOR DIVISION IDENTIFICADOR PUNTO_Y_COMA
+    (32) division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION . NUMERO DIVISION IDENTIFICADOR PUNTO_Y_COMA
+    (33) division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION . IDENTIFICADOR DIVISION NUMERO PUNTO_Y_COMA
+    (34) division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION . NUMERO DIVISION NUMERO PUNTO_Y_COMA
+
+    IDENTIFICADOR   shift and go to state 74
+    NUMERO          shift and go to state 75
+
+
+state 61
+
+    (15) variable_declaration -> DECLARACION INT IDENTIFICADOR NUMERO PUNTO_Y_COMA .
+
+    DECLARACION     reduce using rule 15 (variable_declaration -> DECLARACION INT IDENTIFICADOR NUMERO PUNTO_Y_COMA .)
+    IDENTIFICADOR   reduce using rule 15 (variable_declaration -> DECLARACION INT IDENTIFICADOR NUMERO PUNTO_Y_COMA .)
+    INT             reduce using rule 15 (variable_declaration -> DECLARACION INT IDENTIFICADOR NUMERO PUNTO_Y_COMA .)
+    PRESENTAR       reduce using rule 15 (variable_declaration -> DECLARACION INT IDENTIFICADOR NUMERO PUNTO_Y_COMA .)
+    ALMACENAR       reduce using rule 15 (variable_declaration -> DECLARACION INT IDENTIFICADOR NUMERO PUNTO_Y_COMA .)
+    $end            reduce using rule 15 (variable_declaration -> DECLARACION INT IDENTIFICADOR NUMERO PUNTO_Y_COMA .)
+
+
+state 62
+
+    (17) variable_declaration -> DECLARACION FLOAT IDENTIFICADOR NUMERO PUNTO_Y_COMA .
+
+    DECLARACION     reduce using rule 17 (variable_declaration -> DECLARACION FLOAT IDENTIFICADOR NUMERO PUNTO_Y_COMA .)
+    IDENTIFICADOR   reduce using rule 17 (variable_declaration -> DECLARACION FLOAT IDENTIFICADOR NUMERO PUNTO_Y_COMA .)
+    INT             reduce using rule 17 (variable_declaration -> DECLARACION FLOAT IDENTIFICADOR NUMERO PUNTO_Y_COMA .)
+    PRESENTAR       reduce using rule 17 (variable_declaration -> DECLARACION FLOAT IDENTIFICADOR NUMERO PUNTO_Y_COMA .)
+    ALMACENAR       reduce using rule 17 (variable_declaration -> DECLARACION FLOAT IDENTIFICADOR NUMERO PUNTO_Y_COMA .)
+    $end            reduce using rule 17 (variable_declaration -> DECLARACION FLOAT IDENTIFICADOR NUMERO PUNTO_Y_COMA .)
+
+
+state 63
+
+    (18) variable_declaration -> DECLARACION STRING IDENTIFICADOR CADENA PUNTO_Y_COMA .
+
+    DECLARACION     reduce using rule 18 (variable_declaration -> DECLARACION STRING IDENTIFICADOR CADENA PUNTO_Y_COMA .)
+    IDENTIFICADOR   reduce using rule 18 (variable_declaration -> DECLARACION STRING IDENTIFICADOR CADENA PUNTO_Y_COMA .)
+    INT             reduce using rule 18 (variable_declaration -> DECLARACION STRING IDENTIFICADOR CADENA PUNTO_Y_COMA .)
+    PRESENTAR       reduce using rule 18 (variable_declaration -> DECLARACION STRING IDENTIFICADOR CADENA PUNTO_Y_COMA .)
+    ALMACENAR       reduce using rule 18 (variable_declaration -> DECLARACION STRING IDENTIFICADOR CADENA PUNTO_Y_COMA .)
+    $end            reduce using rule 18 (variable_declaration -> DECLARACION STRING IDENTIFICADOR CADENA PUNTO_Y_COMA .)
+
+
+state 64
+
+    (37) condition -> INT IDENTIFICADOR IGUAL IGUAL NUMERO .
+
+    DECLARACION     reduce using rule 37 (condition -> INT IDENTIFICADOR IGUAL IGUAL NUMERO .)
+    IDENTIFICADOR   reduce using rule 37 (condition -> INT IDENTIFICADOR IGUAL IGUAL NUMERO .)
+    INT             reduce using rule 37 (condition -> INT IDENTIFICADOR IGUAL IGUAL NUMERO .)
+    PRESENTAR       reduce using rule 37 (condition -> INT IDENTIFICADOR IGUAL IGUAL NUMERO .)
+    ALMACENAR       reduce using rule 37 (condition -> INT IDENTIFICADOR IGUAL IGUAL NUMERO .)
+    $end            reduce using rule 37 (condition -> INT IDENTIFICADOR IGUAL IGUAL NUMERO .)
+
+
+state 65
+
+    (40) assignment_statement -> IDENTIFICADOR IGUAL IDENTIFICADOR MAS IDENTIFICADOR .
+
+    DECLARACION     reduce using rule 40 (assignment_statement -> IDENTIFICADOR IGUAL IDENTIFICADOR MAS IDENTIFICADOR .)
+    IDENTIFICADOR   reduce using rule 40 (assignment_statement -> IDENTIFICADOR IGUAL IDENTIFICADOR MAS IDENTIFICADOR .)
+    INT             reduce using rule 40 (assignment_statement -> IDENTIFICADOR IGUAL IDENTIFICADOR MAS IDENTIFICADOR .)
+    PRESENTAR       reduce using rule 40 (assignment_statement -> IDENTIFICADOR IGUAL IDENTIFICADOR MAS IDENTIFICADOR .)
+    ALMACENAR       reduce using rule 40 (assignment_statement -> IDENTIFICADOR IGUAL IDENTIFICADOR MAS IDENTIFICADOR .)
+    $end            reduce using rule 40 (assignment_statement -> IDENTIFICADOR IGUAL IDENTIFICADOR MAS IDENTIFICADOR .)
+
+
+state 66
+
+    (35) print_statement -> PRESENTAR IDENTIFICADOR EN CONSOLA PUNTO_Y_COMA .
+
+    DECLARACION     reduce using rule 35 (print_statement -> PRESENTAR IDENTIFICADOR EN CONSOLA PUNTO_Y_COMA .)
+    IDENTIFICADOR   reduce using rule 35 (print_statement -> PRESENTAR IDENTIFICADOR EN CONSOLA PUNTO_Y_COMA .)
+    INT             reduce using rule 35 (print_statement -> PRESENTAR IDENTIFICADOR EN CONSOLA PUNTO_Y_COMA .)
+    PRESENTAR       reduce using rule 35 (print_statement -> PRESENTAR IDENTIFICADOR EN CONSOLA PUNTO_Y_COMA .)
+    ALMACENAR       reduce using rule 35 (print_statement -> PRESENTAR IDENTIFICADOR EN CONSOLA PUNTO_Y_COMA .)
+    $end            reduce using rule 35 (print_statement -> PRESENTAR IDENTIFICADOR EN CONSOLA PUNTO_Y_COMA .)
+
+
+state 67
+
+    (36) print_statement -> PRESENTAR EN CONSOLA CADENA PUNTO_Y_COMA .
+
+    DECLARACION     reduce using rule 36 (print_statement -> PRESENTAR EN CONSOLA CADENA PUNTO_Y_COMA .)
+    IDENTIFICADOR   reduce using rule 36 (print_statement -> PRESENTAR EN CONSOLA CADENA PUNTO_Y_COMA .)
+    INT             reduce using rule 36 (print_statement -> PRESENTAR EN CONSOLA CADENA PUNTO_Y_COMA .)
+    PRESENTAR       reduce using rule 36 (print_statement -> PRESENTAR EN CONSOLA CADENA PUNTO_Y_COMA .)
+    ALMACENAR       reduce using rule 36 (print_statement -> PRESENTAR EN CONSOLA CADENA PUNTO_Y_COMA .)
+    $end            reduce using rule 36 (print_statement -> PRESENTAR EN CONSOLA CADENA PUNTO_Y_COMA .)
+
+
+state 68
+
+    (19) suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA IDENTIFICADOR . MAS IDENTIFICADOR PUNTO_Y_COMA
+    (21) suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA IDENTIFICADOR . MAS NUMERO PUNTO_Y_COMA
+
+    MAS             shift and go to state 76
+
+
+state 69
+
+    (20) suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA NUMERO . MAS IDENTIFICADOR PUNTO_Y_COMA
+    (22) suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA NUMERO . MAS NUMERO PUNTO_Y_COMA
+
+    MAS             shift and go to state 77
+
+
+state 70
+
+    (23) resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION IDENTIFICADOR . RESTA IDENTIFICADOR PUNTO_Y_COMA
+    (25) resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION IDENTIFICADOR . RESTA NUMERO PUNTO_Y_COMA
+
+    RESTA           shift and go to state 78
+
+
+state 71
+
+    (24) resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION NUMERO . RESTA IDENTIFICADOR PUNTO_Y_COMA
+    (26) resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION NUMERO . RESTA NUMERO PUNTO_Y_COMA
+
+    RESTA           shift and go to state 79
+
+
+state 72
+
+    (27) product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO IDENTIFICADOR . POR IDENTIFICADOR PUNTO_Y_COMA
+    (29) product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO IDENTIFICADOR . POR NUMERO PUNTO_Y_COMA
+
+    POR             shift and go to state 80
+
+
+state 73
+
+    (28) product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO NUMERO . POR IDENTIFICADOR PUNTO_Y_COMA
+    (30) product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO NUMERO . POR NUMERO PUNTO_Y_COMA
+
+    POR             shift and go to state 81
+
+
+state 74
+
+    (31) division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION IDENTIFICADOR . DIVISION IDENTIFICADOR PUNTO_Y_COMA
+    (33) division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION IDENTIFICADOR . DIVISION NUMERO PUNTO_Y_COMA
+
+    DIVISION        shift and go to state 82
+
+
+state 75
+
+    (32) division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION NUMERO . DIVISION IDENTIFICADOR PUNTO_Y_COMA
+    (34) division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION NUMERO . DIVISION NUMERO PUNTO_Y_COMA
+
+    DIVISION        shift and go to state 83
+
+
+state 76
+
+    (19) suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA IDENTIFICADOR MAS . IDENTIFICADOR PUNTO_Y_COMA
+    (21) suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA IDENTIFICADOR MAS . NUMERO PUNTO_Y_COMA
+
+    IDENTIFICADOR   shift and go to state 84
+    NUMERO          shift and go to state 85
+
+
+state 77
+
+    (20) suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA NUMERO MAS . IDENTIFICADOR PUNTO_Y_COMA
+    (22) suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA NUMERO MAS . NUMERO PUNTO_Y_COMA
+
+    IDENTIFICADOR   shift and go to state 86
+    NUMERO          shift and go to state 87
+
+
+state 78
+
+    (23) resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION IDENTIFICADOR RESTA . IDENTIFICADOR PUNTO_Y_COMA
+    (25) resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION IDENTIFICADOR RESTA . NUMERO PUNTO_Y_COMA
+
+    IDENTIFICADOR   shift and go to state 88
+    NUMERO          shift and go to state 89
+
+
+state 79
+
+    (24) resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION NUMERO RESTA . IDENTIFICADOR PUNTO_Y_COMA
+    (26) resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION NUMERO RESTA . NUMERO PUNTO_Y_COMA
+
+    IDENTIFICADOR   shift and go to state 90
+    NUMERO          shift and go to state 91
+
+
+state 80
+
+    (27) product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO IDENTIFICADOR POR . IDENTIFICADOR PUNTO_Y_COMA
+    (29) product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO IDENTIFICADOR POR . NUMERO PUNTO_Y_COMA
+
+    IDENTIFICADOR   shift and go to state 92
+    NUMERO          shift and go to state 93
+
+
+state 81
+
+    (28) product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO NUMERO POR . IDENTIFICADOR PUNTO_Y_COMA
+    (30) product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO NUMERO POR . NUMERO PUNTO_Y_COMA
+
+    IDENTIFICADOR   shift and go to state 94
+    NUMERO          shift and go to state 95
+
+
+state 82
+
+    (31) division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION IDENTIFICADOR DIVISION . IDENTIFICADOR PUNTO_Y_COMA
+    (33) division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION IDENTIFICADOR DIVISION . NUMERO PUNTO_Y_COMA
+
+    IDENTIFICADOR   shift and go to state 96
+    NUMERO          shift and go to state 97
+
+
+state 83
+
+    (32) division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION NUMERO DIVISION . IDENTIFICADOR PUNTO_Y_COMA
+    (34) division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION NUMERO DIVISION . NUMERO PUNTO_Y_COMA
+
+    IDENTIFICADOR   shift and go to state 98
+    NUMERO          shift and go to state 99
+
+
+state 84
+
+    (19) suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA IDENTIFICADOR MAS IDENTIFICADOR . PUNTO_Y_COMA
+
+    PUNTO_Y_COMA    shift and go to state 100
+
+
+state 85
+
+    (21) suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA IDENTIFICADOR MAS NUMERO . PUNTO_Y_COMA
+
+    PUNTO_Y_COMA    shift and go to state 101
+
+
+state 86
+
+    (20) suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA NUMERO MAS IDENTIFICADOR . PUNTO_Y_COMA
+
+    PUNTO_Y_COMA    shift and go to state 102
+
+
+state 87
+
+    (22) suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA NUMERO MAS NUMERO . PUNTO_Y_COMA
+
+    PUNTO_Y_COMA    shift and go to state 103
+
+
+state 88
+
+    (23) resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION IDENTIFICADOR RESTA IDENTIFICADOR . PUNTO_Y_COMA
+
+    PUNTO_Y_COMA    shift and go to state 104
+
+
+state 89
+
+    (25) resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION IDENTIFICADOR RESTA NUMERO . PUNTO_Y_COMA
+
+    PUNTO_Y_COMA    shift and go to state 105
+
+
+state 90
+
+    (24) resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION NUMERO RESTA IDENTIFICADOR . PUNTO_Y_COMA
+
+    PUNTO_Y_COMA    shift and go to state 106
+
+
+state 91
+
+    (26) resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION NUMERO RESTA NUMERO . PUNTO_Y_COMA
+
+    PUNTO_Y_COMA    shift and go to state 107
+
+
+state 92
+
+    (27) product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO IDENTIFICADOR POR IDENTIFICADOR . PUNTO_Y_COMA
+
+    PUNTO_Y_COMA    shift and go to state 108
+
+
+state 93
+
+    (29) product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO IDENTIFICADOR POR NUMERO . PUNTO_Y_COMA
+
+    PUNTO_Y_COMA    shift and go to state 109
+
+
+state 94
+
+    (28) product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO NUMERO POR IDENTIFICADOR . PUNTO_Y_COMA
+
+    PUNTO_Y_COMA    shift and go to state 110
+
+
+state 95
+
+    (30) product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO NUMERO POR NUMERO . PUNTO_Y_COMA
+
+    PUNTO_Y_COMA    shift and go to state 111
+
+
+state 96
+
+    (31) division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION IDENTIFICADOR DIVISION IDENTIFICADOR . PUNTO_Y_COMA
+
+    PUNTO_Y_COMA    shift and go to state 112
+
+
+state 97
+
+    (33) division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION IDENTIFICADOR DIVISION NUMERO . PUNTO_Y_COMA
+
+    PUNTO_Y_COMA    shift and go to state 113
+
+
+state 98
+
+    (32) division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION NUMERO DIVISION IDENTIFICADOR . PUNTO_Y_COMA
+
+    PUNTO_Y_COMA    shift and go to state 114
+
+
+state 99
+
+    (34) division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION NUMERO DIVISION NUMERO . PUNTO_Y_COMA
+
+    PUNTO_Y_COMA    shift and go to state 115
+
+
+state 100
+
+    (19) suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA IDENTIFICADOR MAS IDENTIFICADOR PUNTO_Y_COMA .
+
+    DECLARACION     reduce using rule 19 (suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA IDENTIFICADOR MAS IDENTIFICADOR PUNTO_Y_COMA .)
+    IDENTIFICADOR   reduce using rule 19 (suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA IDENTIFICADOR MAS IDENTIFICADOR PUNTO_Y_COMA .)
+    INT             reduce using rule 19 (suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA IDENTIFICADOR MAS IDENTIFICADOR PUNTO_Y_COMA .)
+    PRESENTAR       reduce using rule 19 (suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA IDENTIFICADOR MAS IDENTIFICADOR PUNTO_Y_COMA .)
+    ALMACENAR       reduce using rule 19 (suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA IDENTIFICADOR MAS IDENTIFICADOR PUNTO_Y_COMA .)
+    $end            reduce using rule 19 (suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA IDENTIFICADOR MAS IDENTIFICADOR PUNTO_Y_COMA .)
+
+
+state 101
+
+    (21) suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA IDENTIFICADOR MAS NUMERO PUNTO_Y_COMA .
+
+    DECLARACION     reduce using rule 21 (suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA IDENTIFICADOR MAS NUMERO PUNTO_Y_COMA .)
+    IDENTIFICADOR   reduce using rule 21 (suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA IDENTIFICADOR MAS NUMERO PUNTO_Y_COMA .)
+    INT             reduce using rule 21 (suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA IDENTIFICADOR MAS NUMERO PUNTO_Y_COMA .)
+    PRESENTAR       reduce using rule 21 (suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA IDENTIFICADOR MAS NUMERO PUNTO_Y_COMA .)
+    ALMACENAR       reduce using rule 21 (suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA IDENTIFICADOR MAS NUMERO PUNTO_Y_COMA .)
+    $end            reduce using rule 21 (suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA IDENTIFICADOR MAS NUMERO PUNTO_Y_COMA .)
+
+
+state 102
+
+    (20) suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA NUMERO MAS IDENTIFICADOR PUNTO_Y_COMA .
+
+    DECLARACION     reduce using rule 20 (suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA NUMERO MAS IDENTIFICADOR PUNTO_Y_COMA .)
+    IDENTIFICADOR   reduce using rule 20 (suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA NUMERO MAS IDENTIFICADOR PUNTO_Y_COMA .)
+    INT             reduce using rule 20 (suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA NUMERO MAS IDENTIFICADOR PUNTO_Y_COMA .)
+    PRESENTAR       reduce using rule 20 (suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA NUMERO MAS IDENTIFICADOR PUNTO_Y_COMA .)
+    ALMACENAR       reduce using rule 20 (suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA NUMERO MAS IDENTIFICADOR PUNTO_Y_COMA .)
+    $end            reduce using rule 20 (suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA NUMERO MAS IDENTIFICADOR PUNTO_Y_COMA .)
+
+
+state 103
+
+    (22) suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA NUMERO MAS NUMERO PUNTO_Y_COMA .
+
+    DECLARACION     reduce using rule 22 (suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA NUMERO MAS NUMERO PUNTO_Y_COMA .)
+    IDENTIFICADOR   reduce using rule 22 (suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA NUMERO MAS NUMERO PUNTO_Y_COMA .)
+    INT             reduce using rule 22 (suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA NUMERO MAS NUMERO PUNTO_Y_COMA .)
+    PRESENTAR       reduce using rule 22 (suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA NUMERO MAS NUMERO PUNTO_Y_COMA .)
+    ALMACENAR       reduce using rule 22 (suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA NUMERO MAS NUMERO PUNTO_Y_COMA .)
+    $end            reduce using rule 22 (suma_statement -> ALMACENAR EN IDENTIFICADOR SUMATORIA NUMERO MAS NUMERO PUNTO_Y_COMA .)
+
+
+state 104
+
+    (23) resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION IDENTIFICADOR RESTA IDENTIFICADOR PUNTO_Y_COMA .
+
+    DECLARACION     reduce using rule 23 (resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION IDENTIFICADOR RESTA IDENTIFICADOR PUNTO_Y_COMA .)
+    IDENTIFICADOR   reduce using rule 23 (resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION IDENTIFICADOR RESTA IDENTIFICADOR PUNTO_Y_COMA .)
+    INT             reduce using rule 23 (resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION IDENTIFICADOR RESTA IDENTIFICADOR PUNTO_Y_COMA .)
+    PRESENTAR       reduce using rule 23 (resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION IDENTIFICADOR RESTA IDENTIFICADOR PUNTO_Y_COMA .)
+    ALMACENAR       reduce using rule 23 (resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION IDENTIFICADOR RESTA IDENTIFICADOR PUNTO_Y_COMA .)
+    $end            reduce using rule 23 (resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION IDENTIFICADOR RESTA IDENTIFICADOR PUNTO_Y_COMA .)
+
+
+state 105
+
+    (25) resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION IDENTIFICADOR RESTA NUMERO PUNTO_Y_COMA .
+
+    DECLARACION     reduce using rule 25 (resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION IDENTIFICADOR RESTA NUMERO PUNTO_Y_COMA .)
+    IDENTIFICADOR   reduce using rule 25 (resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION IDENTIFICADOR RESTA NUMERO PUNTO_Y_COMA .)
+    INT             reduce using rule 25 (resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION IDENTIFICADOR RESTA NUMERO PUNTO_Y_COMA .)
+    PRESENTAR       reduce using rule 25 (resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION IDENTIFICADOR RESTA NUMERO PUNTO_Y_COMA .)
+    ALMACENAR       reduce using rule 25 (resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION IDENTIFICADOR RESTA NUMERO PUNTO_Y_COMA .)
+    $end            reduce using rule 25 (resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION IDENTIFICADOR RESTA NUMERO PUNTO_Y_COMA .)
+
+
+state 106
+
+    (24) resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION NUMERO RESTA IDENTIFICADOR PUNTO_Y_COMA .
+
+    DECLARACION     reduce using rule 24 (resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION NUMERO RESTA IDENTIFICADOR PUNTO_Y_COMA .)
+    IDENTIFICADOR   reduce using rule 24 (resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION NUMERO RESTA IDENTIFICADOR PUNTO_Y_COMA .)
+    INT             reduce using rule 24 (resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION NUMERO RESTA IDENTIFICADOR PUNTO_Y_COMA .)
+    PRESENTAR       reduce using rule 24 (resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION NUMERO RESTA IDENTIFICADOR PUNTO_Y_COMA .)
+    ALMACENAR       reduce using rule 24 (resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION NUMERO RESTA IDENTIFICADOR PUNTO_Y_COMA .)
+    $end            reduce using rule 24 (resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION NUMERO RESTA IDENTIFICADOR PUNTO_Y_COMA .)
+
+
+state 107
+
+    (26) resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION NUMERO RESTA NUMERO PUNTO_Y_COMA .
+
+    DECLARACION     reduce using rule 26 (resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION NUMERO RESTA NUMERO PUNTO_Y_COMA .)
+    IDENTIFICADOR   reduce using rule 26 (resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION NUMERO RESTA NUMERO PUNTO_Y_COMA .)
+    INT             reduce using rule 26 (resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION NUMERO RESTA NUMERO PUNTO_Y_COMA .)
+    PRESENTAR       reduce using rule 26 (resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION NUMERO RESTA NUMERO PUNTO_Y_COMA .)
+    ALMACENAR       reduce using rule 26 (resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION NUMERO RESTA NUMERO PUNTO_Y_COMA .)
+    $end            reduce using rule 26 (resta_statement -> ALMACENAR EN IDENTIFICADOR SUBSTRACTION NUMERO RESTA NUMERO PUNTO_Y_COMA .)
+
+
+state 108
+
+    (27) product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO IDENTIFICADOR POR IDENTIFICADOR PUNTO_Y_COMA .
+
+    DECLARACION     reduce using rule 27 (product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO IDENTIFICADOR POR IDENTIFICADOR PUNTO_Y_COMA .)
+    IDENTIFICADOR   reduce using rule 27 (product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO IDENTIFICADOR POR IDENTIFICADOR PUNTO_Y_COMA .)
+    INT             reduce using rule 27 (product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO IDENTIFICADOR POR IDENTIFICADOR PUNTO_Y_COMA .)
+    PRESENTAR       reduce using rule 27 (product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO IDENTIFICADOR POR IDENTIFICADOR PUNTO_Y_COMA .)
+    ALMACENAR       reduce using rule 27 (product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO IDENTIFICADOR POR IDENTIFICADOR PUNTO_Y_COMA .)
+    $end            reduce using rule 27 (product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO IDENTIFICADOR POR IDENTIFICADOR PUNTO_Y_COMA .)
+
+
+state 109
+
+    (29) product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO IDENTIFICADOR POR NUMERO PUNTO_Y_COMA .
+
+    DECLARACION     reduce using rule 29 (product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO IDENTIFICADOR POR NUMERO PUNTO_Y_COMA .)
+    IDENTIFICADOR   reduce using rule 29 (product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO IDENTIFICADOR POR NUMERO PUNTO_Y_COMA .)
+    INT             reduce using rule 29 (product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO IDENTIFICADOR POR NUMERO PUNTO_Y_COMA .)
+    PRESENTAR       reduce using rule 29 (product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO IDENTIFICADOR POR NUMERO PUNTO_Y_COMA .)
+    ALMACENAR       reduce using rule 29 (product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO IDENTIFICADOR POR NUMERO PUNTO_Y_COMA .)
+    $end            reduce using rule 29 (product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO IDENTIFICADOR POR NUMERO PUNTO_Y_COMA .)
+
+
+state 110
+
+    (28) product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO NUMERO POR IDENTIFICADOR PUNTO_Y_COMA .
+
+    DECLARACION     reduce using rule 28 (product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO NUMERO POR IDENTIFICADOR PUNTO_Y_COMA .)
+    IDENTIFICADOR   reduce using rule 28 (product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO NUMERO POR IDENTIFICADOR PUNTO_Y_COMA .)
+    INT             reduce using rule 28 (product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO NUMERO POR IDENTIFICADOR PUNTO_Y_COMA .)
+    PRESENTAR       reduce using rule 28 (product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO NUMERO POR IDENTIFICADOR PUNTO_Y_COMA .)
+    ALMACENAR       reduce using rule 28 (product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO NUMERO POR IDENTIFICADOR PUNTO_Y_COMA .)
+    $end            reduce using rule 28 (product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO NUMERO POR IDENTIFICADOR PUNTO_Y_COMA .)
+
+
+state 111
+
+    (30) product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO NUMERO POR NUMERO PUNTO_Y_COMA .
+
+    DECLARACION     reduce using rule 30 (product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO NUMERO POR NUMERO PUNTO_Y_COMA .)
+    IDENTIFICADOR   reduce using rule 30 (product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO NUMERO POR NUMERO PUNTO_Y_COMA .)
+    INT             reduce using rule 30 (product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO NUMERO POR NUMERO PUNTO_Y_COMA .)
+    PRESENTAR       reduce using rule 30 (product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO NUMERO POR NUMERO PUNTO_Y_COMA .)
+    ALMACENAR       reduce using rule 30 (product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO NUMERO POR NUMERO PUNTO_Y_COMA .)
+    $end            reduce using rule 30 (product_statement -> ALMACENAR EN IDENTIFICADOR PRODUCTO NUMERO POR NUMERO PUNTO_Y_COMA .)
+
+
+state 112
+
+    (31) division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION IDENTIFICADOR DIVISION IDENTIFICADOR PUNTO_Y_COMA .
+
+    DECLARACION     reduce using rule 31 (division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION IDENTIFICADOR DIVISION IDENTIFICADOR PUNTO_Y_COMA .)
+    IDENTIFICADOR   reduce using rule 31 (division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION IDENTIFICADOR DIVISION IDENTIFICADOR PUNTO_Y_COMA .)
+    INT             reduce using rule 31 (division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION IDENTIFICADOR DIVISION IDENTIFICADOR PUNTO_Y_COMA .)
+    PRESENTAR       reduce using rule 31 (division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION IDENTIFICADOR DIVISION IDENTIFICADOR PUNTO_Y_COMA .)
+    ALMACENAR       reduce using rule 31 (division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION IDENTIFICADOR DIVISION IDENTIFICADOR PUNTO_Y_COMA .)
+    $end            reduce using rule 31 (division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION IDENTIFICADOR DIVISION IDENTIFICADOR PUNTO_Y_COMA .)
+
+
+state 113
+
+    (33) division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION IDENTIFICADOR DIVISION NUMERO PUNTO_Y_COMA .
+
+    DECLARACION     reduce using rule 33 (division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION IDENTIFICADOR DIVISION NUMERO PUNTO_Y_COMA .)
+    IDENTIFICADOR   reduce using rule 33 (division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION IDENTIFICADOR DIVISION NUMERO PUNTO_Y_COMA .)
+    INT             reduce using rule 33 (division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION IDENTIFICADOR DIVISION NUMERO PUNTO_Y_COMA .)
+    PRESENTAR       reduce using rule 33 (division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION IDENTIFICADOR DIVISION NUMERO PUNTO_Y_COMA .)
+    ALMACENAR       reduce using rule 33 (division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION IDENTIFICADOR DIVISION NUMERO PUNTO_Y_COMA .)
+    $end            reduce using rule 33 (division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION IDENTIFICADOR DIVISION NUMERO PUNTO_Y_COMA .)
+
+
+state 114
+
+    (32) division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION NUMERO DIVISION IDENTIFICADOR PUNTO_Y_COMA .
+
+    DECLARACION     reduce using rule 32 (division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION NUMERO DIVISION IDENTIFICADOR PUNTO_Y_COMA .)
+    IDENTIFICADOR   reduce using rule 32 (division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION NUMERO DIVISION IDENTIFICADOR PUNTO_Y_COMA .)
+    INT             reduce using rule 32 (division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION NUMERO DIVISION IDENTIFICADOR PUNTO_Y_COMA .)
+    PRESENTAR       reduce using rule 32 (division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION NUMERO DIVISION IDENTIFICADOR PUNTO_Y_COMA .)
+    ALMACENAR       reduce using rule 32 (division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION NUMERO DIVISION IDENTIFICADOR PUNTO_Y_COMA .)
+    $end            reduce using rule 32 (division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION NUMERO DIVISION IDENTIFICADOR PUNTO_Y_COMA .)
+
+
+state 115
+
+    (34) division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION NUMERO DIVISION NUMERO PUNTO_Y_COMA .
+
+    DECLARACION     reduce using rule 34 (division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION NUMERO DIVISION NUMERO PUNTO_Y_COMA .)
+    IDENTIFICADOR   reduce using rule 34 (division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION NUMERO DIVISION NUMERO PUNTO_Y_COMA .)
+    INT             reduce using rule 34 (division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION NUMERO DIVISION NUMERO PUNTO_Y_COMA .)
+    PRESENTAR       reduce using rule 34 (division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION NUMERO DIVISION NUMERO PUNTO_Y_COMA .)
+    ALMACENAR       reduce using rule 34 (division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION NUMERO DIVISION NUMERO PUNTO_Y_COMA .)
+    $end            reduce using rule 34 (division_statement -> ALMACENAR EN IDENTIFICADOR DIVISION NUMERO DIVISION NUMERO PUNTO_Y_COMA .)
+
+WARNING: 
+WARNING: Conflicts:
+WARNING: 
+WARNING: shift/reduce conflict for DECLARACION in state 0 resolved as shift
+WARNING: shift/reduce conflict for IDENTIFICADOR in state 0 resolved as shift
+WARNING: shift/reduce conflict for INT in state 0 resolved as shift
+WARNING: shift/reduce conflict for PRESENTAR in state 0 resolved as shift
+WARNING: shift/reduce conflict for ALMACENAR in state 0 resolved as shift
+WARNING: shift/reduce conflict for DECLARACION in state 2 resolved as shift
+WARNING: shift/reduce conflict for IDENTIFICADOR in state 2 resolved as shift
+WARNING: shift/reduce conflict for INT in state 2 resolved as shift
+WARNING: shift/reduce conflict for PRESENTAR in state 2 resolved as shift
+WARNING: shift/reduce conflict for ALMACENAR in state 2 resolved as shift
+WARNING: reduce/reduce conflict in state 2 resolved using rule (program -> statement_list)
+WARNING: rejected rule (statement -> <empty>) in state 2
+WARNING: reduce/reduce conflict in state 54 resolved using rule (condition -> IDENTIFICADOR IGUAL IGUAL NUMERO)
+WARNING: rejected rule (condition_statement -> IDENTIFICADOR IGUAL IGUAL NUMERO) in state 54
+WARNING: Rule (condition_statement -> IDENTIFICADOR IGUAL IGUAL NUMERO) is never reduced

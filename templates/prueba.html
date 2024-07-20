@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -23,45 +23,51 @@
                 <button class="execute-btn" id="close-btn"><img src="../static/icons/close.png" alt=""></button>
             </div>
         </header>
+
         <section class="editor" id="editor-section">
             <div class="code-container">
                 <div class="line-numbers" id="line-numbers"></div>
-                <form id="code-form" action="/" method="post" enctype="multipart/form-data">
-                    {% if content %}
-                    <textarea name="code" id="code-editor" class="code-editor" oninput="updateLineNumbers()"
-                        onscroll="syncScroll()" required>{{ content }}</textarea>
-                    {% else %}
-                    <textarea name="code" id="code-editor" class="code-editor" oninput="updateLineNumbers()"
-                        onscroll="syncScroll()" required></textarea>
-                    {% endif %}
-                </form>
+                <textarea name="code" id="code-editor" class="code-editor"
+                    oninput="updateLineNumbers()">{{ content }}</textarea>
             </div>
         </section>
-        <section class="result">
+
+        <section class="result" id="result-section">
             <div class="result-title">
                 <h4>Resultados</h4>
             </div>
             <div class="output">
                 {% if syntax_result %}
-                <ul>
-                    {% for resultado, out, prints, linea in syntax_result %}
-                    <li>Resultado esperado: {{ resultado }}</li>
-                    {% if prints %}
-                    {% for print in prints %}
-                    <li>Resultado esperado: {{ print }}</li>
-                    {% endfor %}
-                    {% endif %}
-                    {% if linea %}
-                    <li>{{ out }}</li>
-                    {% endif %}
-                    {% endfor %}
-                </ul>
+                {% for resultado, out, simbolo, linea in syntax_result %}
+                <h1>{{ out }}</h1>
+                {% endfor %}
                 {% endif %}
             </div>
         </section>
     </div>
 
-    <script src="../static/scripts/scripts.js"></script>
+    <script>
+        function updateLineNumbers() {
+            const editor = document.getElementById('code-editor');
+            const lineNumbers = document.getElementById('line-numbers');
+            const lines = editor.value.split('\n').length;
+            lineNumbers.innerHTML = Array.from({ length: lines }, (_, i) => `<div>${i + 1}</div>`).join('');
+        }
+
+        function syncScroll() {
+            const editor = document.getElementById('code-editor');
+            const lineNumbers = document.getElementById('line-numbers');
+            lineNumbers.scrollTop = editor.scrollTop;
+        }
+
+        document.getElementById('code-editor').addEventListener('scroll', syncScroll);
+        document.getElementById('code-editor').addEventListener('input', updateLineNumbers);
+
+        // Inicializa los números de línea y sincroniza el scroll
+        updateLineNumbers();
+        syncScroll();
+
+    </script>
 
 </body>
 

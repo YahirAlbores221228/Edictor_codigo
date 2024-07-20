@@ -447,11 +447,9 @@ parser = yacc.yacc(debug=True)
 class SemanticError(Exception):
     pass
 
-output_errors = []
-
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    global reserved_count, identificador_count, number_count, symbol_count, p_abierto_count, p_cerrado_count, ll_abierta_count, ll_cerrada_count, error_count, current_language, output_errors
+    global reserved_count, identificador_count, number_count, symbol_count, p_abierto_count, p_cerrado_count, ll_abierta_count, ll_cerrada_count, error_count, current_language
     reserved_count = 0
     identificador_count = 0
     number_count = 0
@@ -462,7 +460,8 @@ def index():
     ll_cerrada_count = 0
     error_count = 0
 
-    global prints
+    global out, prints
+    out = ''
     prints = []
     content = ''
     if request.method == 'POST':
@@ -477,15 +476,15 @@ def index():
             syntax_result = [("Análisis Sintáctico Exitoso", "", prints, False)]
         except SyntaxError as e:
             result = "Error en Análisis Sintáctico"
-            output_errors.append(str(e))
+            out = str(e)
             syntax_result = [(result, out, prints, True)]
         except SemanticError as e:  # Captura el SemanticError para evitar que el programa truene
             result = "Analisis Sintactico Exitoso, posible error Semántico detectado" 
-            output_errors.append(str(e))
-            syntax_result = [(result, str(e), prints, True)]
-        return render_template('index.html', tokens=None, syntax_result=syntax_result, content=content,output_errors=output_errors, abierto_count=p_abierto_count, cerrado_count=p_cerrado_count, ll_abierta_count=ll_abierta_count, ll_cerrada_count=ll_cerrada_count)
+            out = str(e)
+            syntax_result = [(result, out, prints, True)]
+        return render_template('index.html', tokens=None, syntax_result=syntax_result, content=content, abierto_count=p_abierto_count, cerrado_count=p_cerrado_count, ll_abierta_count=ll_abierta_count, ll_cerrada_count=ll_cerrada_count)
 
-    return render_template('index.html', syntax_result=None, content='', output_errors=output_errors, abierto_count=p_abierto_count, cerrado_count=p_cerrado_count)
+    return render_template('index.html', tokens=None, syntax_result=None, content=content, abierto_count=p_abierto_count, cerrado_count=p_cerrado_count)
 
 if __name__ == "__main__":
     app.run(debug=True)
